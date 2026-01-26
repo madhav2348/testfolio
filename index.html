@@ -6,11 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Scroll Animation</title>
     <style>
+        @font-face {
+            font-family: 'Ditty';
+            src: url('font/Ditty.ttf') format('truetype');
+        }
+        h1, h2 {
+            font-size: 4.5em;
+            margin: 0.5em 0;
+        }
         body {
             margin: 0;
             padding: 0;
             overflow-x: hidden;
             background: black;
+            font-family: 'Ditty', cursive;
+            color: white;
         }
 
         #container {
@@ -42,7 +52,7 @@
             left: auto;
             padding: 8px;
             width: 100%;
-            height: 10%;
+            height: auto;
             z-index: 5;
             backdrop-filter: blur(3px);
             background: rgba(255, 255, 255, 0.1);
@@ -51,6 +61,16 @@
 
         .left-box {
             margin: 10px;
+             width: calc(100% - 10px);
+            height: calc(100% - 10px);
+            object-fit: cover;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-sizing: border-box;
+            position: relative;
+            z-index: 1;
+            display: block;
+            margin: 0;
         }
 
         .right-box {
@@ -119,10 +139,13 @@
             <img id="frame" src="scene/1/output/output_0001.png" alt="animation frame">
             <button id="switchBtn" style="position: absolute; top: 10px; right: 10px; z-index: 10;">720 frames</button>
             <div class="blur-overlay">
+<div style="width: 20%; height: 20% ; align-content: center; justify-items: center; "> 
 
 
-                <img class="info-box left-box" src="" alt="Left Image">
-                <div class="info-box right-box">Description: This is a placeholder for an empty image on the left.</div>
+    <img class="info-box left-box" src="image/me.jpg" alt="Left Image">
+</div>
+
+                <div class="info-box right-box"> <h1>Description: This is a placeholder for an empty image on the left.</h1></div>
 
             </div>
             <div id="blur-overlay">
@@ -130,7 +153,7 @@
                 <div id="journey">
 
                 </div>
-                `
+                
             </div>
         </div>
     </div>

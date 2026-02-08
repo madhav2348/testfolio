@@ -10,6 +10,27 @@
   --c-muted: #8d8274;
   --c-accent: #c46a3e;
   --c-accent-2: #8f2e2e;
+  --c-panel-bg: rgba(20, 16, 12, 0.75);
+  --c-panel-border: rgba(196, 106, 62, 0.35);
+  --c-card-bg: rgba(24, 18, 13, 0.6);
+  --c-card-border: rgba(196, 106, 62, 0.25);
+  --c-link-bg: rgba(196, 106, 62, 0.15);
+  --c-link-border: rgba(224, 178, 122, 0.45);
+  --g-titan: linear-gradient(135deg, #f6e7d1 0%, #e0b27a 45%, #c46a3e 70%, #8f2e2e 100%);
+  --g-aot-hero: linear-gradient(
+  180deg,
+  #0b0b0b 0%,
+  #2a2a2a 12%,
+  #5a5a5a 28%,
+  #f2f2f2 45%,
+  #ffffff 50%,
+  #f2f2f2 55%,
+  #7a7a7a 70%,
+  #2f2f2f 88%,
+  #050505 100%
+);
+
+
 }
 
 * {
@@ -22,29 +43,34 @@ body {
   overflow-x: hidden;
   background: black;
   font-family: "Ditty", cursive;
- var(--c-body);
+  color: var(--c-body);
 }
 
 h1 {
   font-size: 3em;
   margin: 0.5em 0;
-  var(--c-heading);
+  background: var(--g-titan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 h2 {
   font-size: 2.5em;
   margin: 0.5em 0;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  background: var(--g-titan);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
-  var(--c-section);
 }
 
 h3 {
   font-size: 1.8em;
   margin: 0.3em 0;
-  var(--c-subtitle);
+  background: var(--g-titan);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 #container {
@@ -81,7 +107,13 @@ h3 {
 .hero-title {
   font-size: 4em;
   margin-bottom: 0.2em;
-  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.8);
+  /* text-shadow: 0 0 10px rgba(0, 0, 0, 0.4); */
+
+ 
+  background: var(--g-aot-hero);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .hero-subtitle {
@@ -105,11 +137,11 @@ h3 {
   align-items: center;
   gap: 10px;
   padding: 12px 24px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px);
-  border: 2px solid rgba(255, 255, 255, 0.2);
+  background: var(--c-link-bg);
+  backdrop-filter: none;
+  border: 2px solid var(--c-link-border);
   border-radius: 12px;
-  color: var(--c-accent);
+  color: var(--c-heading);
   text-decoration: none;
   font-size: 1.1em;
 }
@@ -127,9 +159,9 @@ h3 {
   left: 50%;
   transform: translateX(-50%);
   z-index: 10;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(2px);
-  border: 2px solid rgba(255, 255, 255, 0.1);
+  background: var(--c-panel-bg);
+  backdrop-filter: none;
+  border: 2px solid rgba(224, 178, 122, 0.7);
   border-radius: 20px;
   padding: 40px;
   margin: 20px 0;
@@ -157,7 +189,7 @@ h3 {
 }
 
 .tech-category h3 {
-  color: #667eea;
+  color: var(--c-section);
   margin-bottom: 15px;
 }
 
@@ -169,24 +201,24 @@ h3 {
 }
 
 .tech-item {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--c-card-bg);
   padding: 15px;
   border-radius: 10px;
   text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(224, 178, 122, 0.55);
 }
 
 /* Projects */
 .project-card {
-  background: rgba(255, 255, 255, 0.1);
+  background: var(--c-card-bg);
   padding: 25px;
   border-radius: 15px;
   margin: 20px 0;
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(224, 178, 122, 0.55);
 }
 
 .project-card h3 {
-  color: #667eea;
+  color: var(--c-section);
 }
 
 .project-tech {
@@ -197,20 +229,21 @@ h3 {
 }
 
 .tech-tag {
-  background: rgba(102, 126, 234, 0.3);
+  background: rgba(196, 106, 62, 0.25);
   padding: 5px 15px;
   border-radius: 20px;
   font-size: 0.9em;
-  border: 1px solid #667eea;
+  border: 1px solid rgba(224, 178, 122, 0.75);
+  color: var(--c-heading);
 }
 
 /* Experience */
 .experience-item {
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--c-card-bg);
   padding: 25px;
   border-radius: 15px;
   margin: 20px 0;
-  border-left: 4px solid #667eea;
+  border-left: 4px solid rgba(224, 178, 122, 0.85);
 }
 
 .experience-header {
@@ -223,11 +256,11 @@ h3 {
 }
 
 .experience-title {
-  color: #667eea;
+  color: var(--c-section);
 }
 
 .experience-date {
-  color: #999;
+  color: var(--c-muted);
   font-size: 0.9em;
 }
 
